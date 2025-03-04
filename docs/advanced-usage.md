@@ -11,6 +11,7 @@
   - [SapMachine](#SapMachine)
   - [GraalVM](#GraalVM)
   - [JetBrains](#JetBrains)
+  - [Tencent Kona](#Tencent-Kona)
 - [Installing custom Java package type](#Installing-custom-Java-package-type)
 - [Installing custom Java architecture](#Installing-custom-Java-architecture)
 - [Installing custom Java distribution from local file](#Installing-Java-from-local-file)
@@ -215,19 +216,17 @@ The available package types are:
 - `jdk+ft` - JBRSDK (FreeType)
 - `jre+ft` - JBR (FreeType)
 
-### GraalVM
-**NOTE:** Oracle GraalVM is only available for JDK 17 and later.
+### Tencent Kona
+**NOTE:** Tencent Kona supports major versions 8, 11, 17 and 21, and provides jdk only.
 
 ```yaml
 steps:
-- uses: actions/checkout@v4
-- uses: actions/setup-java@v4
-  with:
-    distribution: 'graalvm'
-    java-version: '21'
-- run: |
-    java -cp java HelloWorldApp
-    native-image -cp java HelloWorldApp
+  - uses: actions/checkout@v4
+  - uses: actions/setup-java@v4
+    with:
+      distribution: 'kona'
+      java-version: '8'
+  - run: java -cp java HelloWorldApp
 ```
 
 ## Installing custom Java package type

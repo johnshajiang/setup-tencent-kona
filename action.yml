@@ -1,7 +1,10 @@
-name: 'Setup Java JDK'
-description: 'Set up a specific version of the Java JDK and add the
-   command-line tools to the PATH'
-author: 'GitHub'
+name: 'Setup Tencent Kona'
+description: 'An extended GitHub setup-java action for supporting Tencent Kona JDK'
+
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
+
 inputs:
   java-version:
     description: 'The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file'
